@@ -1,7 +1,3 @@
-// mcts_tictactoe.cpp
-// 简单的蒙特卡洛树搜索（MCTS）实现，用于井字棋（Tic-Tac-Toe）示例
-// 兼顾可读性与实用性，C++17
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -308,15 +304,3 @@ int main() {
     cout << "平局\n";
   return 0;
 }
-
-/*
-说明：
-- 本示例为了简洁，做了若干简化：
-  1) GameState 没有定义 clone() 接口，demo 中使用 dynamic_cast 拷贝
-TicTacToeState。 2) default_policy 返回值按固定规则（以玩家1
-为基准）统计。真实项目中应统一奖励/得分定义（如相对于 root 的玩家）。 3) backup
-与 wins 统计可以改为相对父玩家的胜率统计，或使用 +1/-1 更新以表示胜/负。
-- 可改进点：并行化模拟、使用启发式 rollout、把 GameState 增加 clone()
-虚函数以支持任意游戏等。
-- 编译：g++ -std=c++17 mcts_tictactoe.cpp -O2 -o mcts
-*/
